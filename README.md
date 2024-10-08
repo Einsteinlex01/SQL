@@ -4,8 +4,8 @@
 - [Project Review](#Project-Review)
 - [Tools](#Tools)
 - [Code Analysis](#Code-Analysis)
-- [Data cleaning/preparation](#Data-cleaning/preparation)
-- [conclusion (DATA ANALYSIS IN SQL)](#conclusion (DATA ANALYSIS IN SQL))
+- [Data cleaning/preparation](#Data-cleaning-preparation)
+- [conclusion (DATA ANALYSIS IN SQL)](#conclusion)
 
 ### AIMS AND OBJECTIVES OF THE PROJECT
 #### The Admission Officer wants to gain more insight on the data in order to keep track of correct analysis base on the key roles;
