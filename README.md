@@ -1,19 +1,29 @@
 # MBA ADMISSION ANALYSIS 2025
 
-## AIMS AND OBJECTIVES OF THE PROJECT
-### The Admission Officer wants to gain more insight on the data in order to keep track of correct analysis base on the key roles;
-#### (a). Assign a funding fee of $50000 to all the sponsored and $0 to notsponsored candidate.
-#### (b). sum the funding fee for all sponsored candidates.
-#### (c). sum the funding fee of all sponsored candidates for male and female
-#### (d). Assign a tuition fee of 75000 for notsponsored candidate, $(75000 - funding_fee) for sponsored candidates and $0 for nonadmitted candidate.
-#### (e). Group the funding fee of all the sponsoring candidate by gender and major.
+## Content
+- [Project Review](#Project-Review)
+- [Tools](#Tools)
+- [Code Analysis](#Code-Analysis)
+- [Data cleaning/preparation](#Data-cleaning/preparation)
+- [conclusion (DATA ANALYSIS IN SQL)](#conclusion (DATA ANALYSIS IN SQL))
 
-#### Base on the admission process, the purpose of this whole analysis is to ensure the growth and success of the MBA admission program for 2025, it is crucial to adopt a multifaceted approach. By enhancing marketing strategies, diversifying program offerings, streamlining application processes, promoting inclusivity, and providing robust career support, we can attract a vibrant and diverse cohort of students. Implementing these strategies will position the program as a leader in business education and meet the needs of future business leaders.
+### AIMS AND OBJECTIVES OF THE PROJECT
+#### The Admission Officer wants to gain more insight on the data in order to keep track of correct analysis base on the key roles;
+##### (a). Assign a funding fee of $50000 to all the sponsored and $0 to notsponsored candidate.
+##### (b). sum the funding fee for all sponsored candidates.
+##### (c). sum the funding fee of all sponsored candidates for male and female
+##### (d). Assign a tuition fee of 75000 for notsponsored candidate, $(75000 - funding_fee) for sponsored candidates and $0 for nonadmitted candidate.
+##### (e). Group the funding fee of all the sponsoring candidate by gender and major.
+
+### Project Review
+Base on the admission process, the purpose of this whole analysis is to ensure the growth and success of the MBA admission program for 2025, it is crucial to adopt a multifaceted approach. By enhancing marketing strategies, diversifying program offerings, streamlining application processes, promoting inclusivity, and providing robust career support, we can attract a vibrant and diverse cohort of students. Implementing these strategies will position the program as a leader in business education and meet the needs of future business leaders.
 
 ### Tools
 - SQL (MySqlWorkbench) For data cleaning and analysis
 - Excel for Data analysis and visualization [Download Here](https://www.microsoft.com)
 - Analytical and problem solving skill.
+  
+## Code Analysis
 
 ### The data provided was so dirty, so some query was written to do "DATA CLEANING" and "DATA ANALYSIS" as the concluding part.
 
@@ -488,7 +498,18 @@ Base on the above observation, Null student shows international students which s
 
 - sum the funding fee for all sponsored candidates
   
- ![Total funding](https://github.com/user-attachments/assets/86ae38b5-469d-4fbe-ab10-f64121b972ac)
+Code:
+```sql
+select 
+	sum(funding_fee)
+from
+	mba2
+where funding_fee = 50000;
+```
+  
+Result:
+
+![Total funding](https://github.com/user-attachments/assets/86ae38b5-469d-4fbe-ab10-f64121b972ac)
 
 
 - sum the funding fee of all sponsored candidates for male and female
@@ -505,7 +526,8 @@ where gender = "male" and funding_fee = 50000;
 ```
 
 Result:
- ![Total F MALE](https://github.com/user-attachments/assets/509c2be2-0257-449f-a83f-43d574adc6da)
+
+![Total F MALE](https://github.com/user-attachments/assets/509c2be2-0257-449f-a83f-43d574adc6da)
 
 For Female
 Code:
@@ -519,7 +541,8 @@ where gender = "female" and funding_fee = 50000;
 ```
 
 Result:
- ![Total F female](https://github.com/user-attachments/assets/7da510a9-0ba1-467e-bbaf-7fd85b207ea9)
+
+![Total F female](https://github.com/user-attachments/assets/7da510a9-0ba1-467e-bbaf-7fd85b207ea9)
 
 - Group the funding fee of all the sponsoring candidate by gender snd major
   drop any procedure if exists
@@ -548,9 +571,10 @@ DELIMITER ;
 The technique used in this perticular section is stored procedure and this is what it brings after execution
 
 Result:
- ![Final](https://github.com/user-attachments/assets/1d1af63a-a1a3-4142-a032-32f9c3aec136)
+
+![Final](https://github.com/user-attachments/assets/1d1af63a-a1a3-4142-a032-32f9c3aec136)
 
 it sums the funding fee base on the major of each gender.
 
-  
+### To continue with the flow of this project, download the files attached to this project. it contains all the information about analysis, dashboard design and Report writing which gives more insight about the analysis. 
   
