@@ -492,19 +492,62 @@ Base on the above observation, Null student shows international students which s
 
 
 - sum the funding fee of all sponsored candidates for male and female
-For Male
 
+For Male
+Code:
+```sql
+select 
+	gender,
+    sum(funding_fee)
+from 
+	mba2 
+where gender = "male" and funding_fee = 50000;
+```
+
+Result:
  ![Total F MALE](https://github.com/user-attachments/assets/509c2be2-0257-449f-a83f-43d574adc6da)
 
 For Female
+Code:
+```sql
+select 
+	gender,
+    sum(funding_fee)
+from 
+	mba2 
+where gender = "female" and funding_fee = 50000;
+```
 
+Result:
  ![Total F female](https://github.com/user-attachments/assets/7da510a9-0ba1-467e-bbaf-7fd85b207ea9)
 
 - Group the funding fee of all the sponsoring candidate by gender snd major
   drop any procedure if exists
+Code:
+```sql
+drop PROCEDURE IF EXISTS p_grouping_funding_fee;
 
+DELIMITER $$
+CREATE PROCEDURE p_grouping_funding_fee(in p_gender varchar(7), in p_major varchar(15))
+begin
+select 
+	gender,
+    major,
+    sum(funding_fee)
+from
+	mba2
+where 
+	gender = p_gender and major = p_major
+    group by gender, major, funding_fee;
+end$$
+DELIMITER ;
+
+-- uncomment this below statement to insert the p_gender and p_major of choice
+-- call MBA_ADMISSION_DB.p_grouping_funding_fee('p_gender', 'p_major');
+```
 The technique used in this perticular section is stored procedure and this is what it brings after execution
-  
+
+Result:
  ![Final](https://github.com/user-attachments/assets/1d1af63a-a1a3-4142-a032-32f9c3aec136)
 
 it sums the funding fee base on the major of each gender.
